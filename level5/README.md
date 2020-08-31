@@ -4,5 +4,5 @@
 
 <br>
 <br>
-* 링크 : <https://www.acmicpc.net/step/48>
+* 링크 : https://www.acmicpc.net/step/48
 <hr />
