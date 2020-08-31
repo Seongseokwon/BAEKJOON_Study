@@ -6,55 +6,28 @@
 
 #include <stdio.h>
 
-int number_check(int num)
-{
-    int newN;
-    int ten, one, res;
-    int cnt =0;
-
-    if(num < 10)
-    {
-        ten = 0;
-        one = num % 10;
-        res = ten + one;
-        newN = one + res % 10;
-    }
-    else
-    {
-        ten = num / 10;
-        one = num % 10;
-        res = ten + one;
-        newN = one + res % 10;
-    }
-
-    if (num != newN)
-    {
-        cnt++;
-        number_check(newN);
-    }
-    else
-    {
-        return cnt;
-    }
-}
-
 int main()
 {
     int i;
     int N;
-    int ten, one,res;
+    int ten, one, hap;
     i = 0;
-    scnaf("%d", &N);
-
+    scanf("%d", &N);
+    int newNum;
+    newNum = N;
     while (1)
     {
-        if (N < 10)
-        {
-            ten = 0;
-            one = N;
-            res = ten + one;
-        }
+        ten = newNum / 10;
+        one = newNum % 10;
+        hap = ten + one;
+        newNum = one*10 + (hap % 10);
         i++;
+        printf("%d + %d = %d 새수 : %d \n", ten, one, hap, newNum);
+        if(newNum == N)
+        {
+            printf("%d", i);
+            break;
+        }
     }
     return 0;
 }
